@@ -2,6 +2,7 @@ import {
   AfterViewChecked,
   AfterViewInit,
   ElementRef,
+  OnDestroy,
   ViewChild,
 } from "@angular/core";
 import { AfterContentChecked, AfterContentInit } from "@angular/core";
@@ -25,6 +26,7 @@ export class ServerElementComponent
   implements
     OnInit,
     OnChanges,
+    OnDestroy,
     DoCheck,
     AfterContentInit,
     AfterContentChecked,
@@ -63,6 +65,10 @@ export class ServerElementComponent
 
   ngDoCheck() {
     console.log("ngDoCheck called");
+  }
+
+  ngOnDestroy() {
+    console.log("ngOnDestroy called");
   }
 
   ngOnChanges(changes: SimpleChanges) {
