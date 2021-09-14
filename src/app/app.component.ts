@@ -8,9 +8,13 @@ import { Component } from "@angular/core";
 export class AppComponent {
   serverElements = [
     { type: "server", name: "Server 1", content: "Server 1 Content" },
-    { type: "server", name: "Server 2", content: "Server 2 Content" },
+    { type: "blueprint", name: "Server 2", content: "Server 2 Content" },
     { type: "server", name: "Server 3", content: "Server 3 Content" },
   ];
+
+  onChangeFirst() {
+    this.serverElements[0].name = "Changed";
+  }
 
   onServerAdded(serverData: { serverName: string; serverContent: string }) {
     this.serverElements.push({
